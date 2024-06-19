@@ -1,21 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-app
+  name: hello-kubernetes
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: python-app
+      app: hello-kubernetes
   template:
     metadata:
       labels:
-        app: python-app
+        app: hello-kubernetes
     spec:
       containers:
-      - name: python-app
-        image: ghcr.io//python-app:latest
+      - name: hello-kubernetes
+        image: python:2.7
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/bash"]
+        args: ["-c", "echo \"<p>Hello from $(hostname)</p>\" > index.html; python -m SimpleHTTPServer 8080"]
         ports:
-        - containerPort: 5000
+        - name: http
+          containerPort: 8080
 
 
