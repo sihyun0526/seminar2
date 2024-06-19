@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/sihyun0526/my-python-app'
+    repoURL: 'https://github.com/sihyun0526/seminar2/my-python-app'
     targetRevision: HEAD
     path: kubernetes
   destination:
