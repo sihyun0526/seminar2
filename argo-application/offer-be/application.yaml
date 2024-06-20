@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: offer-be
+  namespace: argocd
+spec:
+  destination:
+    namespace: offer-be
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: services/offer-be
+    repoURL: git@github.com:sihyun0526/seminar2.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
