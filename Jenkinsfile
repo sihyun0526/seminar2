@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent  {
+        label 'dind-agent'
+    }
 
     environment {
         GITHUB_CREDENTIALS = credentials('github-credentials')
