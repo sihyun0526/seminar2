@@ -6,7 +6,8 @@ from github_utils import get_github_repo, upload_github_issue
 
 
 if __name__ == "__main__":
-    repository_name = "github-action-with-python"
+    access_token = os.environ['MY_GITHUB_TOKEN']
+    repository_name = "seminar2"
 
     seoul_timezone = timezone('Asia/Seoul')
     today = datetime.now(seoul_timezone)
@@ -21,5 +22,4 @@ if __name__ == "__main__":
     repo = get_github_repo(access_token, repository_name)
     upload_github_issue(repo, issue_title, upload_contents)
     print("Upload Github Issue Success!")
-
 
