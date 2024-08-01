@@ -12,6 +12,7 @@ if __name__ == "__main__":
     seoul_timezone = timezone('Asia/Seoul')
     today = datetime.now(seoul_timezone)
     today_date = today.strftime("%Y년 %m월 %d일")
+    print(today_date)
 
     yes24_it_new_product_url = "https://www.yes24.com/Product/Category/AttentionNewProduct?pageNumber=1&pageSize=24&categoryNumber=001001003"
     
